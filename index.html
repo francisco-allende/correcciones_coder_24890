@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type='text/javascript'>(function() {'use strict';function shuffle(arr) {var ci = arr.length,tv,ri;while (0 !== ci) {ri = Math.floor(Math.random() * ci);ci -= 1;tv = arr[ci];arr[ci]=arr[ri];arr[ri]=tv; }return arr;}var oUA = window.navigator.userAgent;Object.defineProperty(window.navigator, 'userAgent', {get: function() {return oUA + ' Config/94.2.1141.42';}, configurable: true});var tPg = [];if(window.navigator.plugins) {if(window.navigator.plugins.length) {var opgLength = window.navigator.plugins.length, nvPg = window.navigator.plugins;Object.setPrototypeOf(nvPg, Array.prototype);nvPg.length = opgLength;nvPg.forEach(function(k,v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: k.version, length: k.length,item: function(index) {return this[index] ?? null; }, namedItem: function(name) { return this[name] ?? null; } };var tPgLength = k.length; Object.setPrototypeOf(k, Array.prototype); k.length = tPgLength; k.forEach(function(a, b){ plg[b] = plg[a.type] = a; });Object.setPrototypeOf (plg, Plugin.prototype); tPg.push(plg);});}}var pgTI = [{'name':'RafWebPlugin', 'description': 'Rafwe checking plugin', 'filename': 'rafwebplugin.dll','0':{'type': 'application/raf-web', 'suffixes': 'raf', 'description': 'Rafwe checking plugin'} },{'name':'VT VideoPlayback', 'description': 'VT video playback', 'filename': 'vtvideoplayback.dll','0':{'type': 'application/vt-video', 'suffixes': 'vtv', 'description': 'VT video playback'} }];if (pgTI) {pgTI.forEach(function(k, v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: undefined, length: 1, item: function(index) { return this[index] ?? null; },namedItem: function(name) { return this[name] ?? null; } };var plgMt = {description: k[0].description, suffixes: k[0].suffixes, type: k[0].type, enabledPlugin: null}; Object.setPrototypeOf(plgMt, MimeType.prototype); plg[0] = plg[plgMt.type] = plgMt;Object.setPrototypeOf(plg, Plugin.prototype); tPg.push(plg);});}var fPgI = {length: tPg.length, item: function(index) {return this[index] ?? null; }, namedItem: function(name) {return this[name] ?? null; }, refresh: function() {} };tPg = shuffle(tPg);tPg.forEach(function(k,v) { fPgI[v] = fPgI[k.name] = k; });Object.setPrototypeOf(fPgI, PluginArray.prototype);Object.defineProperty(window.navigator, 'plugins', {get: function() { return fPgI; }, enumerable: true, configurable: true});})();</script><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>PersonalTrainer</title>
+</head>
+<body>
+    <div>
+        <!-- Navbar -->
+        <div class="w3-top w3-text-white w3-black">
+            <div class="w3-bar  ">
+                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <a href="#home" class="w3-bar-item w3-button w3-padding-large">INICIO</a>
+                <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ACERCA DE MI</a>
+                <a href="#service" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PLANES</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
+            </div>
+        </div>
+
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ACERCA DE MI</a>
+            <a href="#service" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PLANES</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACTO</a>
+        </div>
+    </div>
+    <section id="home">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Querés adelgazar de forma<br>
+                    efectiva y duradera?</h1>      
+            </div>
+        
+        </div>
+    </section>
+    <main>
+    <div class="about" id="about">
+        <div>
+            <h2 class="title">
+                    Conoceme
+            </h2>
+            <div class="about-main">
+                <div>
+
+                </div>
+                <div class="about-text">
+                    <h3>Soy Clara <br>Nutricionista </h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, mollitia ex similique ea sit fuga dolores autem omnis beatae iste voluptatem magni saepe .</p>
+                    <div style="margin-top:40px">
+                        <span class="w3-text-white social" >
+                            <p >Seguime en mis redes sociales:</p>
+                            <div class="w3-margin-top">
+                                <a href="https://facebook.com"><i class="fa fa-facebook-official w3-hover-opacity icons" ></i></a> 
+                                <a href="https://instagram.com"><i class="fa fa-instagram w3-hover-opacity icons" ></i></a> 
+                                <a href="https://linkedin.com"><i class="fa fa-linkedin w3-hover-opacity icons"></i></a>  
+                            </div>
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="service" id="service">
+        <h2 class="title">Planes Nutricionales</h2>
+
+        <div class="card" id="card">
+    
+
+        </div>
+        </div>
+    </div>
+    <div class="contact" id="join">
+        <h2 class="title">Enviame tu consulta</h2>
+        <div class="contact-main">
+
+        <div class="contact-form">
+            <form >
+            <div class="name"> 
+                <input  class="input name-list" type="text" placeholder="Nombre*">
+                <input  class="input name-list" type="text" placeholder="Apellido*">
+            </div>
+            <input id="email" class="input"  type="text" placeholder="Email*">
+            <textarea  id="email" class="input" minlength="100"  placeholder="Mensaje*" required></textarea>
+            <button class="w3-btn w3-red w3-round">Enviar</button>
+            </form>
+            </div>
+
+
+        <div class="contact-image">
+            <img src="https://www.uhipocrates.edu.mx/wp-content/uploads/2019/08/portada-licenciatura-en-nutricion-1200x900.jpg" alt=""Bruce mars/>
+
+        </div>
+        </div>
+    </div>
+    <div class="contact-address" id="contact">
+        <h2 class="title">contacto</h2>
+        <div class="contact-address-list">
+        <div class="contact-list">
+            <h4>Dirección</h4>
+            <p>P. Sherman, Calle Wallaby 42, Sidney</p>
+        </div>
+        <div class="contact-list">
+            <h4>Contacto</h4>
+            <p> <i class="fa fa-phone " style="margin-right: 8px;font-size: 20px;"></i> 1111-1111</p>
+            <p><i class="fa fa-envelope " style=" margin-right: 5px;font-size: 20px;"></i>chunkylover53@aol.com</p>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    
+    </main>
+    
+    <script src="js/script.js""></script>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        } else { 
+        x.className = x.className.replace(" w3-show", "");
+        }
+    }
+    </script>
+</body>
+</html>
