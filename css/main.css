@@ -1,0 +1,695 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: black;
+  font-family: "Gilda Display";
+  text-decoration: none;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 8rem auto auto auto auto;
+  justify-content: center;
+  justify-items: center;
+}
+.main .navbarContainer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 99vw;
+  height: 6rem;
+  justify-content: space-around;
+  align-content: flex-start;
+}
+.main .barraNavegacion {
+  display: flex;
+  flex-flow: row wrap;
+  width: 60vw;
+  height: 5rem;
+  justify-content: space-around;
+  list-style: none;
+  align-content: center;
+}
+.main a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+.main #menuHamburguesa {
+  display: none;
+}
+.main .icono__Uno {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+.main .menuResponsive {
+  display: none;
+  position: absolute;
+  top: 6rem;
+}
+@media only screen and (max-width: 800px) {
+  .main .navbarContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    z-index: 1;
+    opacity: 1;
+  }
+  .main .barraNavegacion {
+    display: none;
+    flex-flow: row wrap;
+    width: 100vw;
+    justify-content: center;
+    list-style: none;
+    align-content: center;
+  }
+  .main .menuResponsive a {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 10px 0;
+    text-align: center;
+    background: black;
+    color: white;
+    font-weight: 800;
+    border-bottom: 2px solid white;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+  }
+  .main .menuResponsive a:hover {
+    background: white;
+    color: black;
+  }
+  .main .mostrar {
+    display: block;
+  }
+  .main .logoPagina {
+    display: flex;
+    flex-flow: row wrap;
+    left: 0.5rem;
+    top: 1rem;
+    width: 9rem;
+    height: 8rem;
+    justify-content: center;
+    align-items: flex-start;
+    left: 10%;
+  }
+  .main .container-Iconos {
+    display: flex;
+    flex-direction: row;
+    width: 10rem;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main .icono__Uno {
+    display: flex;
+    flex-flow: row wrap;
+    right: 5.5em;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 30px;
+  }
+  .main #menuHamburguesa {
+    display: flex;
+  }
+  .main #menuHamburguesa img {
+    display: flex;
+    flex-flow: row wrap;
+    width: 3rem;
+    height: 3rem;
+    top: 35px;
+    right: 1rem;
+  }
+}
+.main .carrousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main input[name=slider-select-element] {
+  display: none;
+}
+.main #slider-arrows {
+  margin: 0 auto 0 auto;
+  width: 100%;
+}
+.main #slider-box {
+  -moz-animation: autoSlider 15s infinite linear;
+  -o-animation: autoSlider 15s infinite linear;
+  -webkit-animation: autoSlider 15s infinite linear;
+  animation: autoSlider 15s infinite linear;
+  -webkit-transition: all 0.99s ease;
+  -moz-transition: all 0.99s ease;
+  -ms-transition: all 0.99s ease;
+  -o-transition: all 0.99s ease;
+  transition: all 0.99s ease;
+  height: 100%;
+  width: 455%;
+}
+.main #slider-container {
+  height: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+}
+.main .element-uno,
+.main .element-dos,
+.main .element-tres,
+.main .element-cuatro {
+  min-height: 600px;
+  max-height: 100%;
+  width: 100%;
+}
+.main .element-uno {
+  background-image: url(../root/assets/img/gatito\ en\ cesta\ de\ mimbre.jpg);
+  background-size: 100% 100%;
+  width: 100vw;
+}
+.main .element-dos {
+  background-image: url(../root/assets/img/artesania\ macrame.jpg);
+  background-size: 100% 100%;
+  width: 100vw;
+}
+.main .element-tres {
+  background-image: url(../root/assets/img/cesta\ de\ mimbre.jpg);
+  background-size: 100% 100%;
+  width: 100vw;
+}
+.main .element-cuatro {
+  background-image: url(../root/assets/img/pintura\ corazon.jpg);
+  background-size: 100% 100%;
+  width: 100vw;
+}
+.main .slider-element {
+  float: left;
+  width: 22%;
+}
+@-moz-keyframes autoSlider {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  35% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  65% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  85% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-webkit-keyframes autoSlider {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  35% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  65% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  85% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes autoSlider {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  35% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  65% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  85% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+.main .textBienvenida {
+  display: flex;
+  flex-flow: row wrap;
+  width: 80%;
+  height: auto;
+  align-items: center;
+  text-align: center;
+  font-family: "Gilda Display";
+  font-size: 1.3rem;
+  line-height: 25px;
+}
+.main .secciones__Container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 97%;
+  height: auto;
+  justify-content: space-evenly;
+}
+.main .secciones__Container .seccion__Uno {
+  display: inline-block;
+  position: relative;
+}
+.main .secciones__Container .seccion__Uno .texto__Uno {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main .secciones__Container .seccion__Uno .texto__Dos {
+  position: absolute;
+  top: 60px;
+  left: 10%;
+  right: 10%;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+.main .secciones__Container .seccion__Dos {
+  display: inline-block;
+  position: relative;
+}
+.main .secciones__Container .seccion__Dos .texto__Uno {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.main .secciones__Container .seccion__Dos .texto__Dos {
+  position: absolute;
+  top: 60px;
+  left: 10%;
+  right: 10%;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+.main .secciones__Container .seccion__Tres {
+  display: inline-block;
+  position: relative;
+}
+.main .secciones__Container .seccion__Tres .texto__Uno {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.main .secciones__Container .seccion__Tres .texto__Dos {
+  position: absolute;
+  top: 60px;
+  left: 10%;
+  right: 10%;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+.main .secciones__Container .seccion__Cuatro {
+  display: inline-block;
+  position: relative;
+}
+.main .secciones__Container .seccion__Cuatro .texto__Uno {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.main .secciones__Container .seccion__Cuatro .texto__Dos {
+  position: absolute;
+  top: 60px;
+  left: 10%;
+  right: 10%;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+.main .secciones__Container img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.main .footer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #b5bac9;
+}
+.main .footer .texto__Patricia {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main .footer .texto__Direccion {
+  font-size: 1.2rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: black;
+  font-family: "Gilda Display";
+  text-decoration: none;
+}
+
+.sobrenosotros-Container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+}
+
+article button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  width: 200px;
+  padding: 0.9rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  justify-content: space-evenly;
+  overflow: hidden;
+  background: white;
+  color: ghostwhite;
+  opacity: 0.99;
+}
+
+article button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+article button:hover span {
+  color: black;
+}
+
+article button::before,
+article button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+article button::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+article button:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+@media only screen and (max-width: 800px) {
+  article {
+    display: flex;
+    flex-flow: row wrap;
+    width: 97%;
+    height: auto;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+
+  article button {
+    display: inline-block;
+    justify-content: stretch;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    width: 33%;
+    height: auto;
+    padding: 0.5rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 15px;
+    overflow: hidden;
+    background: white;
+    color: ghostwhite;
+    opacity: 0.99;
+  }
+
+  article button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+  }
+
+  article button:hover span {
+    color: black;
+  }
+
+  article button::before,
+article button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  article button::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  }
+
+  article button:hover::before {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+.conte_parent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.conte_parent .conte {
+  height: 390px;
+  width: 290px;
+  box-shadow: 0 0 7px #111;
+  margin: 30px 30px;
+  /* From cssbuttons.io by @nikk7007 */
+}
+.conte_parent .conte .card {
+  height: 200px;
+  width: 100%;
+  margin-bottom: 80px;
+}
+.conte_parent .conte .card img {
+  margin: auto;
+  display: block;
+}
+.conte_parent .conte .cesto-Mimbre img {
+  height: 320px;
+  width: 300px;
+}
+.conte_parent .conte .cesto-Mimbre {
+  background-color: #111;
+}
+.conte_parent .conte .bolso-Rustico {
+  background-color: #111;
+}
+.conte_parent .conte .atrapasuenios {
+  background-color: #111;
+}
+.conte_parent .conte .cuadro {
+  background-color: #111;
+}
+.conte_parent .conte .pulseraMacrame {
+  background-color: #111;
+}
+.conte_parent .conte .centrodeMesa {
+  background-color: #111;
+}
+.conte_parent .conte .cuadroNaturaleza {
+  background-color: #111;
+}
+.conte_parent .conte .bolso-Rustico img {
+  height: 290px;
+  width: 285px;
+}
+.conte_parent .conte .atrapasuenios img {
+  height: 290px;
+  width: 285px;
+}
+.conte_parent .conte .pulseraMacrame img {
+  height: 240px;
+  width: 290px;
+}
+.conte_parent .conte .centrodeMesa img {
+  height: 250px;
+  width: 291px;
+}
+.conte_parent .conte .cuadroNaturaleza img {
+  height: 295px;
+  width: 290px;
+}
+.conte_parent .conte .conte .cuadro {
+  background-color: #111;
+}
+.conte_parent .conte .cuadro img {
+  height: 275px;
+  width: 250px;
+}
+.conte_parent .conte .informacion {
+  height: 30px;
+  width: 100%;
+}
+.conte_parent .conte .informacion h1 {
+  font-family: sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  color: #333;
+  margin-bottom: 23px;
+}
+.conte_parent .conte .informacion p {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  color: #555;
+}
+.conte_parent .conte .precio {
+  height: 30px;
+  width: 85%;
+  margin: auto;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.conte_parent .conte .box-precio {
+  width: 50px;
+}
+.conte_parent .conte .precio1 {
+  color: red;
+  font-size: 0.8em;
+}
+.conte_parent .conte .precio2 {
+  font-size: 1em;
+}
+.conte_parent .conte .shoping {
+  font-size: 1.5em;
+  color: #555;
+}
+.conte_parent .conte .contenedor__Compra {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+.conte_parent .conte div button {
+  padding: 0.4em 1.4em;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: white;
+}
+.conte_parent .conte div button::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+.conte_parent .conte div button:hover::before {
+  width: 105%;
+}
+.conte_parent .conte div button:hover {
+  color: black;
+}
+
+/*# sourceMappingURL=main.css.map */
