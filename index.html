@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="formita" class="formContact container col-lg-5 col-md-12">
+        <label for="name" class="form-label">Nombre:</label><br />
+        <input class="form-control" type="text" id="name" name="name" rows="1" cols="45"/>
+        <button onclick="validateForm()"> Mostrar Nombre </button>  
+        <!--Faltaba llamar al evento!-->  
+    </form>
+    <h3 id="print"></h3>
+
+<script>
+    function validateForm() 
+    {
+        //la logica esta bien 👍
+        let nombre = document.forms["formita"]["name"].value;
+        if (nombre === "") {
+        console.log("Ingresa tu nombre");
+        return false;
+        }
+        else
+        {
+            let print = document.getElementById("print")
+            print.innerHTML = `${nombre}`
+        }
+        event.preventDefault() //importante, evita que se recargue la pagina
+    }
+  
+
+</script>
+
+</body>
+</html>
