@@ -4,8 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const planes = [];
-const carrito = [];
+let carrito;
 
+let validarCarrito = localStorage.getItem("carrito");
+
+if(validarCarrito == null){
+    carrito = [];
+    console.log(carrito);
+
+}else{
+    carrito = JSON.parse(validarCarrito);
+    console.log(carrito);
+}
 
 class PlanesDieta {
     constructor(id, nombre, precio, imgen){
@@ -33,9 +43,10 @@ const hacerCards = () => {
     cardsHtml.innerHTML = ``
 
     for(plan of planes){
-        console.warn(plan.name)
 
-        let card = document.createElement('div')
+        console.warn(plan.name);
+
+        let card = document.createElement('div');
         card.className = "card-list"
         card.innerHTML = `
             <div class="card-image">
@@ -49,24 +60,45 @@ const hacerCards = () => {
         `
         cardsHtml.appendChild(card)
 
-        //Ya no necesito esto, ya accedi al id
-        //let buttonHtml = document.getElementById(plan.id);
-
-        
-
     };
 
 };
 
-//Evento activado desde el onclick del html dinamico de las cards
-function triggerBtnEvent(id)
-{
-    console.log(`Prueba boton: ${id}`)
+//tenias dos funciones con el mismo nombre!! Usa una o la otra, ambas son validas
+
+function triggerBtnEvent(id){
+
+    console.log(`Prueba boton: ${id}`);
+    agregarAlCarrito(plan);
+    
+};
+//Podes usar esta tambien si asi lo deseas, vas a tener que cambiar algunas cosas
+//triggerBtnEvent.addEventListener('click', agregarAlCarrito(plan));
+
+const agregarAlCarrito = (item) => {
+
+    console.log(item);
+
+    let aux = carrito.find(Element => Element.id === item.id);
+
+    if(aux === undefined){
+        carrito.push(item);
+        alert("Añadido");
+        guardarStorage();
+    }else{
+        alert("Ya esta añadido el plan");
+    }
+
 }
 
-//Se puede borrar
-/*
-buttonHtml.onclick = () => {
-    console.log(`Prueba boton: ${plan.id}`)
-};
-*/
+const vaciarCarrito = () => {
+
+    carrito = [];
+
+    guardarStorage();
+}
+
+const guardarStorage = () => {
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
