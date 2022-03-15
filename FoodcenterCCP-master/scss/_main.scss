@@ -1,0 +1,102 @@
+.indexito {
+  height: 40vh;
+  & .btn a {
+    color: white;
+  }
+}
+.perrofeliz img {
+  width: 250px;
+  filter: grayscale(50%);
+}
+
+.mascotas img{
+  filter: grayscale(40%);
+}
+
+// utilización de un mixin para destacar texto importante
+@mixin important-text {
+  color: map-get($grayscale, "800");
+  font-size: 20px;
+  font-weight: bold;
+  p{
+    font-family: $fuenteTexto;
+  }
+  h2{
+    font-family: $fuenteTitulos;
+  }
+}
+
+.misyvis {
+  @include important-text;
+  border: 2px solid black;
+}
+
+.container {
+  padding-top: 30px;
+}
+
+.mainUbicacion{
+  & .ubica {
+    width: 100%;
+    & .bodega {
+      overflow: hidden;
+      background: url(../img/bodega.jpg);
+      background-position: center center;
+    }
+  }
+}
+
+.mainContact{
+  color: white;
+  background: url(../img/contacto.jpg);
+  background-position: cover;
+  & .formita {
+    font-family: $fuenteTexto;
+    font-weight: 1000;
+    font-size: 20px;
+    max-width: 100%;
+    margin: 10px;
+    position: center;
+  }
+}
+
+.mainAcerca {
+  background-color: $colorFondo;
+}
+
+.info2 {
+  border: 2px solid $bordeForm;
+  justify-content: center;
+  margin-bottom: 20px;
+  & #image-sand {
+    width: 250px;
+  }
+  & #image-sand:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.laGaleria {
+  justify-content: center;
+  margin-top: 40px;
+  & .card {
+    background-color: $colorFondo !important;
+    border: 1px solid grey !important;
+
+    & img:hover {
+      -webkit-transform: scale(1.13);
+      transform: scale(1.13);
+    }
+  }
+}
+.info a {
+  font-weight: 580;
+}
+
+.videoyt iframe{
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 500px;
+}

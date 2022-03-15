@@ -1,0 +1,231 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+/* todavía quiero esta fuente para mis navs */
+/* es amatic */
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+/* oswald */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap");
+/* roboto */
+/* la importación de header, main, footer*/
+.navbar {
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
+  font-weight: 800;
+}
+.navbar a {
+  font-weight: 2000;
+}
+.navbar a:hover {
+  color: teal !important;
+}
+.navbar .logo img:hover {
+  transform: scale(1.2);
+}
+
+.footer {
+  padding-top: 1px;
+}
+.footer .footer-menus ul {
+  list-style: none;
+  padding: 0;
+}
+.footer img:hover {
+  transform: scale(1.2);
+}
+.footer .social-links li {
+  list-style-type: none;
+}
+
+.indexito {
+  height: 40vh;
+}
+.indexito .btn a {
+  color: white;
+}
+
+.perrofeliz img {
+  width: 250px;
+  filter: grayscale(50%);
+}
+
+.mascotas img {
+  filter: grayscale(40%);
+}
+
+.misyvis {
+  color: #4A4C4F;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+.misyvis p {
+  font-family: "Roboto", sans-serif;
+}
+.misyvis h2 {
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  padding-top: 30px;
+}
+
+.mainUbicacion .ubica {
+  width: 100%;
+}
+.mainUbicacion .ubica .bodega {
+  overflow: hidden;
+  background: url(../img/bodega.jpg);
+  background-position: center center;
+}
+
+.mainContact {
+  color: white;
+  background: url(../img/contacto.jpg);
+  background-position: cover;
+}
+.mainContact .formita {
+  font-family: "Roboto", sans-serif;
+  font-weight: 1000;
+  font-size: 20px;
+  max-width: 100%;
+  margin: 10px;
+  position: center;
+}
+
+.mainAcerca {
+  background-color: #e3f2fd;
+}
+
+.info2 {
+  border: 2px solid #333536;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.info2 #image-sand {
+  width: 250px;
+}
+.info2 #image-sand:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.laGaleria {
+  justify-content: center;
+  margin-top: 40px;
+}
+.laGaleria .card {
+  background-color: #e3f2fd !important;
+  border: 1px solid grey !important;
+}
+.laGaleria .card img:hover {
+  -webkit-transform: scale(1.13);
+  transform: scale(1.13);
+}
+
+.info a {
+  font-weight: 580;
+}
+
+.videoyt iframe {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 500px;
+}
+
+/* manejo de tamaños del logo para los 3 tamaños */
+/* tamaños para celu */
+@media (min-width: 320px) {
+  .logo img {
+    width: 100px;
+  }
+
+  .address img {
+    width: 130px;
+  }
+
+  .mainContact {
+    min-height: 100vh;
+  }
+
+  .mainUbicacion iframe {
+    width: 300px;
+    height: 450px;
+  }
+
+  .indexito {
+    min-height: 50vh;
+  }
+}
+/* tamaños para tablet */
+@media (min-width: 480px) {
+  .logo img {
+    width: 150px;
+  }
+
+  .address img {
+    width: 180px;
+  }
+
+  .mainContact {
+    height: 100vh;
+  }
+
+  .mainUbicacion iframe {
+    width: 400px;
+    height: 400px;
+  }
+}
+/* tamaños para desktop */
+@media (min-width: 1024px) {
+  .logo img {
+    width: 150px;
+  }
+
+  .address img {
+    width: 180px;
+  }
+
+  .mainAcerca {
+    min-height: 120vh;
+  }
+
+  .mainContact {
+    height: 100vh;
+  }
+
+  .primera iframe {
+    width: 500px;
+    height: 300px;
+  }
+
+  .mainUbicacion {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .mainUbicacion iframe {
+    width: 500px;
+    height: 500px;
+  }
+}
+/* de aquí en adelante, estilos para cosas específicas */
+*::selection {
+  background-color: #7C7F82;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2, h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: capitalize;
+}
+
+a {
+  color: teal;
+}
+
+/*# sourceMappingURL=estilos.css.map */
