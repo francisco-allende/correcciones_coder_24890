@@ -43,7 +43,8 @@ body {
 .main .icono__Uno {
   display: flex;
   flex-flow: row wrap;
-  align-content: center;
+  align-items: center;
+  height: 95px;
 }
 .main .menuResponsive {
   display: none;
@@ -120,8 +121,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     width: 3rem;
-    height: 3rem;
-    top: 35px;
+    height: 3.8rem;
     right: 1rem;
   }
 }
@@ -167,22 +167,22 @@ body {
   width: 100%;
 }
 .main .element-uno {
-  background-image: url(../root/assets/img/gatito\ en\ cesta\ de\ mimbre.jpg);
+  background-image: url(../img/gatito\ en\ cesta\ de\ mimbre.jpg);
   background-size: 100% 100%;
   width: 100vw;
 }
 .main .element-dos {
-  background-image: url(../root/assets/img/artesania\ macrame.jpg);
+  background-image: url(../img/artesania\ macrame.jpg);
   background-size: 100% 100%;
   width: 100vw;
 }
 .main .element-tres {
-  background-image: url(../root/assets/img/cesta\ de\ mimbre.jpg);
+  background-image: url(../img/cesta\ de\ mimbre.jpg);
   background-size: 100% 100%;
   width: 100vw;
 }
 .main .element-cuatro {
-  background-image: url(../root/assets/img/pintura\ corazon.jpg);
+  background-image: url(../img/pintura\ corazon.jpg);
   background-size: 100% 100%;
   width: 100vw;
 }
@@ -287,6 +287,7 @@ body {
   font-family: "Gilda Display";
   font-size: 1.3rem;
   line-height: 25px;
+  justify-content: end;
 }
 .main .secciones__Container {
   display: flex;
@@ -379,7 +380,8 @@ body {
   opacity: 0.4;
   filter: alpha(opacity=40);
 }
-.main .footer {
+
+.footer {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -388,11 +390,11 @@ body {
   align-items: center;
   background-color: #b5bac9;
 }
-.main .footer .texto__Patricia {
+.footer .texto__Patricia {
   font-size: 1.5rem;
   font-weight: 800;
 }
-.main .footer .texto__Direccion {
+.footer .texto__Direccion {
   font-size: 1.2rem;
 }
 
@@ -416,43 +418,63 @@ body {
   text-align: center;
 }
 
-article {
-  display: flex;
-  flex-direction: row;
+body {
+  min-height: 100%;
 }
 
-article button {
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100vw;
+  height: auto;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: auto;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+}
+
+#buttons #boton {
   outline: none;
   cursor: pointer;
   border: none;
-  width: 200px;
-  padding: 0.9rem;
+  overflow: hidden;
+  width: 170.75px;
+  padding: 0.4rem;
   margin: 0;
   font-family: inherit;
   font-size: inherit;
   position: relative;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.06rem;
   font-weight: 700;
   font-size: 17px;
-  justify-content: space-evenly;
-  overflow: hidden;
   background: white;
   color: ghostwhite;
   opacity: 0.99;
 }
 
-article button span {
+#buttons #boton span {
   position: relative;
   z-index: 10;
   transition: color 0.4s;
 }
 
-article button:hover span {
+#buttons #boton:hover span {
   color: black;
 }
 
-article button::before,
-article button::after {
+#buttons #boton::before, a#buttons #boton::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -461,7 +483,7 @@ article button::after {
   z-index: 0;
 }
 
-article button::before {
+#buttons #boton::before {
   content: "";
   background: #000;
   width: 120%;
@@ -470,28 +492,27 @@ article button::before {
   transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-article button:hover::before {
+#buttons #boton:hover::before {
   transform: translate3d(100%, 0, 0);
 }
 
 @media only screen and (max-width: 800px) {
-  article {
+  #buttons {
     display: flex;
     flex-flow: row wrap;
     width: 97%;
     height: auto;
-    justify-content: space-between;
-    border: 1px solid black;
+    justify-content: center;
   }
 
-  article button {
+  #buttons #boton {
     display: inline-block;
     justify-content: stretch;
     align-items: center;
     outline: none;
     cursor: pointer;
     border: none;
-    width: 33%;
+    width: 50%;
     height: auto;
     padding: 0.5rem;
     margin: 0;
@@ -506,18 +527,18 @@ article button:hover::before {
     opacity: 0.99;
   }
 
-  article button span {
+  #buttons #boton span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
   }
 
-  article button:hover span {
+  #buttons #boton:hover span {
     color: black;
   }
 
-  article button::before,
-article button::after {
+  #buttons #boton::before,
+#buttons #boton::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -526,7 +547,7 @@ article button::after {
     z-index: 0;
   }
 
-  article button::before {
+  #buttons #boton::before {
     content: "";
     background: #000;
     width: 120%;
@@ -535,161 +556,72 @@ article button::after {
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
   }
 
-  article button:hover::before {
+  #buttons #boton:hover::before {
     transform: translate3d(100%, 0, 0);
   }
 }
-.conte_parent {
+.tarjetas {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.conte_parent .conte {
-  height: 390px;
-  width: 290px;
-  box-shadow: 0 0 7px #111;
-  margin: 30px 30px;
-  /* From cssbuttons.io by @nikk7007 */
-}
-.conte_parent .conte .card {
-  height: 200px;
+  justify-items: center;
   width: 100%;
-  margin-bottom: 80px;
+  min-height: 50rem;
 }
-.conte_parent .conte .card img {
-  margin: auto;
-  display: block;
-}
-.conte_parent .conte .cesto-Mimbre img {
-  height: 320px;
-  width: 300px;
-}
-.conte_parent .conte .cesto-Mimbre {
-  background-color: #111;
-}
-.conte_parent .conte .bolso-Rustico {
-  background-color: #111;
-}
-.conte_parent .conte .atrapasuenios {
-  background-color: #111;
-}
-.conte_parent .conte .cuadro {
-  background-color: #111;
-}
-.conte_parent .conte .pulseraMacrame {
-  background-color: #111;
-}
-.conte_parent .conte .centrodeMesa {
-  background-color: #111;
-}
-.conte_parent .conte .cuadroNaturaleza {
-  background-color: #111;
-}
-.conte_parent .conte .bolso-Rustico img {
-  height: 290px;
-  width: 285px;
-}
-.conte_parent .conte .atrapasuenios img {
-  height: 290px;
-  width: 285px;
-}
-.conte_parent .conte .pulseraMacrame img {
-  height: 240px;
-  width: 290px;
-}
-.conte_parent .conte .centrodeMesa img {
-  height: 250px;
-  width: 291px;
-}
-.conte_parent .conte .cuadroNaturaleza img {
-  height: 295px;
-  width: 290px;
-}
-.conte_parent .conte .conte .cuadro {
-  background-color: #111;
-}
-.conte_parent .conte .cuadro img {
-  height: 275px;
-  width: 250px;
-}
-.conte_parent .conte .informacion {
-  height: 30px;
-  width: 100%;
-}
-.conte_parent .conte .informacion h1 {
-  font-family: sans-serif;
-  font-size: 1.2em;
-  text-align: center;
-  color: #333;
-  margin-bottom: 23px;
-}
-.conte_parent .conte .informacion p {
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 0.9em;
-  color: #555;
-}
-.conte_parent .conte .precio {
-  height: 30px;
-  width: 85%;
-  margin: auto;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.conte_parent .conte .box-precio {
-  width: 50px;
-}
-.conte_parent .conte .precio1 {
-  color: red;
-  font-size: 0.8em;
-}
-.conte_parent .conte .precio2 {
-  font-size: 1em;
-}
-.conte_parent .conte .shoping {
-  font-size: 1.5em;
-  color: #555;
-}
-.conte_parent .conte .contenedor__Compra {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
-.conte_parent .conte div button {
-  padding: 0.4em 1.4em;
-  border: 2px solid black;
+.tarjetas .card {
+  display: inline-block;
   position: relative;
-  overflow: hidden;
-  background-color: black;
-  text-align: center;
-  font-size: 14px;
-  transition: 0.3s;
-  z-index: 1;
-  font-family: inherit;
-  color: white;
+  width: 260px;
+  height: 360px;
+  top: 10px;
+  padding: 0 10px 0 10px;
+  border: 5px double black;
 }
-.conte_parent .conte div button::before {
-  content: "";
-  width: 0;
-  height: 300%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: white;
-  transition: 0.5s ease;
+.tarjetas .card .imagen {
+  width: 250px;
+  height: 310px;
+}
+.tarjetas .card .botonTarjeta {
   display: block;
-  z-index: -1;
+  position: absolute;
 }
-.conte_parent .conte div button:hover::before {
-  width: 105%;
-}
-.conte_parent .conte div button:hover {
-  color: black;
+
+/* .carrito{
+  width: 400px;
+  height: 300px;
+  border: 1px double black;
+} */
+@media only screen and (max-width: 800px) {
+  .tarjetas {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .tarjetas .card {
+    display: inline-block;
+    position: relative;
+    width: 260px;
+    height: 360px;
+    border: 5px double black;
+    align-content: center;
+    justify-content: center;
+  }
+  .tarjetas .card .imagen {
+    width: 260px;
+    height: 310px;
+  }
+  .tarjetas .card .botonTarjeta {
+    display: block;
+    position: absolute;
+  }
+
+  .carrito {
+    width: 70%;
+    height: 40%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
