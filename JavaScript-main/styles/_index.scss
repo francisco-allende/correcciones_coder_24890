@@ -1,0 +1,136 @@
+.main-index {
+  section {
+    .titulo-corona{
+      width: 800px;
+      // background-color: yellow;
+      position: relative;
+          top: 30px;
+          left: 70px;
+        h2 {
+          text-align: center;
+          
+          
+        }
+    }
+
+    .articulo-1 {
+      #imagen-principal {
+        position: relative;
+        transition: 300ms;
+        width: 1300px;
+
+        &:hover{
+          transform: scale(1.01);
+        }
+      }
+    }
+
+    .articulo-2 {
+      img {
+        width: 1300px;
+      }
+    }
+
+    .articulo-3 {
+      width: 1300px;
+      display: flex;
+
+      img {
+        width: 33%;
+        margin: .1%;
+      }
+    }
+
+    .articulo-4{
+      padding: 0px 5px  ;
+
+      width: 1300px;
+      display: flex;
+      
+
+      img{
+        position: relative;
+        transition: 300ms;
+        width: 640px;
+
+        &:hover{
+          transform: scale(1.02);
+        }
+        
+      }
+    }
+
+
+
+    .payments {
+      width: 1300px;
+      margin-top: 25px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+    }
+    .newsletter {
+      margin-top: 20px;
+      margin-bottom: 20px;
+        h3 {
+          text-align: center;
+          padding: 2px;
+          margin: 2px;
+        }
+
+      .ingresar-cuenta-mail {
+      
+
+        .container {
+          display:flex;
+          justify-content: center;
+          padding: 1px; 
+
+          input[type="text"],
+          input[type="submit"] {
+            width: 20%;
+            padding: 12px;
+            margin: 5px 0px;
+            border: 2px solid rgb(241, 198, 104);
+            box-sizing: border-box;
+          }
+          input[type="submit"] {
+            background-color: #60a3bc;
+            color: white;
+            border: none;
+          }
+          input[type="submit"]:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+
+    }
+  }
+  .floating{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+         font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+
+    .float-button{
+      margin-top: 15px;
+      transition: 300ms;
+      &:hover{
+        color: black;
+      }
+    }
+  }
+}
+
+

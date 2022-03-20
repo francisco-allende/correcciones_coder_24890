@@ -1,0 +1,89 @@
+.content-productos {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas:
+    "sidebar main-productos"
+  ;
+
+  .main-productos {
+    grid-area: main-productos;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    .imagenes {
+      margin: 5px;
+      transition: box-shadow .3s;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      float: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+
+      }
+
+
+
+      img {
+        margin: 5px;
+        width: 200px;
+        height: 200px;
+        max-width: 100%;
+
+
+      }
+    }
+
+    h3 {
+      margin: 10px;
+    }
+
+    p {
+      margin: 5px;
+    }
+
+    button {
+      margin: 5px;
+      width: 50%;
+      height: 25px;
+    }
+
+  }
+
+
+
+
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  padding: 20px;
+  margin: 5px;
+  
+
+
+  ul{
+    list-style-image: url(/img/favicon/favicon.ico);
+    padding: 5px;
+
+    li{
+      padding: 5px;
+
+      &:hover{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        margin-left: 25px;
+        transition: 300ms;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0.1s;
+      }
+      }
+    }
+  }

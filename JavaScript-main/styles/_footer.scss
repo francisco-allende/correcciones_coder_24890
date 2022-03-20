@@ -1,0 +1,139 @@
+footer {
+
+    margin-top: 20px;
+    
+    width: 100%;
+    display: grid;
+    background-color: black;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "datos redes copyright";
+    align-items: center;
+
+
+        .data-contact{ 
+            grid-area: datos;
+            height: 100%;       
+            display: grid;
+            width: auto;
+            color: white;
+            margin-left: 20px;
+            grid-template-columns: 1fr 1fr;
+
+            grid-template-areas: "telefono direccion" 
+                                "correo horario";
+            
+                div {
+                    p{
+                        margin-left: 5px;
+                        font-size: 13px;
+                    }
+                }
+
+                //GRID AREAS
+
+                .phone-num{
+                    grid-area: telefono;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+
+                        i{
+                            width: 20%;
+                        }
+                    
+                        p{
+                            width: 80%;
+                            
+                        }
+                }
+
+                .location-info{
+                    grid-area: direccion;
+                    display: flex;
+                    justify-content: flex-start;
+                    white-space: nowrap;
+                    align-items: center;
+                    width: 100%;
+
+                        i{
+                            width: 20%;
+                        }
+                    
+                        p{
+                            width: 80%;
+                        }
+                    
+                }
+                .mail-address{
+                    grid-area: correo;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+
+                        i{
+                            width: 20%;
+                        }
+                    
+                        p{
+                            width: 80%;
+                        }
+                    
+                }
+                .working-hours{
+                    grid-area: horario;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+
+                        i{
+                            width: 20%;
+                        }
+                    
+                        p{
+                            width: 80%;
+                        }
+                    
+                }
+
+                    }
+
+        .social-networks{
+            display: grid;
+            grid-area: redes;
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            align-items: center;
+            justify-items: center;
+        
+            grid-template-columns: repeat(3, 1fr);
+               
+                a{
+                    color: white;
+                }
+        
+        
+        }
+
+        .copy{
+            grid-area: copyright;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+                p {
+                    
+                    font-size: 10px;
+                    color: white;
+                    width: 100%;
+                }
+
+        }
+
+}
+
+

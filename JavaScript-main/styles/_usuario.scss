@@ -1,0 +1,83 @@
+
+
+.new-user-page{
+
+    background: rgb(148,192,228);
+background: linear-gradient(163deg, rgba(148,192,228,1) 0%, rgba(205,140,46,1) 100%);
+
+
+
+
+
+
+    .content-usuario{
+
+        .caja-interna{
+            background: rgb(148,192,228);
+            background: linear-gradient(356deg, rgba(148,192,228,1) 0%, rgba(205,140,46,1) 100%);
+        }
+
+    
+        min-height: 60vh;
+    
+        border: black outset;
+    
+        legend{
+            font-size: 2rem;
+            text-align: center;
+            
+    
+        }
+    
+    
+    
+    
+    
+    
+        .formulario-new-user{
+            border: grey inset;
+            display: flex;
+            margin: 5px;
+            padding: 5px;
+           
+            
+    
+    
+            .genero{
+                text-align: center;
+                margin: auto;
+                margin: auto;
+
+                .gender-options{
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                
+    
+     
+    
+            }
+    
+            div{
+    
+                margin: 20px;
+                padding: 10px;
+            }
+            
+    
+    
+            
+            
+            
+            
+            
+            }
+}
+
+
+}
+
+
+
+
+
