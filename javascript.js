@@ -1,73 +1,192 @@
 
 
+
+
 let productos;
 let cantidad;
 let preciofinal;
 let stockproducto;
 let respuesta="si";
 let prodructoingresado;
-const carrito = []
+let carrito = []
 compracollar=0;
 compraanillo=0;
 compradijes=0;
-let acumuladorproductos=0;
+let acumuladorproductos;
+acumuladorproductos=0;
 let acumuladorunidades=0;
-let productoelegido=document.getElementById("productoElegido")
+let productoelegido=document.getElementById("productoElegido");
 
-
-
-
-
-
-/* --SECCION FUNCIONES--*/
 
 /*<<<FUNCION PARA BUSCAR PRODUCTO>>>*/
 function nombreProducto()   
 {
     let input1=document.getElementById("input1").value;
     console.log(input1);
-    const buscador = listaAccesorio.find(Accesorio=>Accesorio.tipo==input1);
+    const buscador = listaAccesorioB.find(Accesorio=>Accesorio.tipo==input1);
 if(buscador == undefined)
 {
     
-    alert("Vuelva a escribir el producto que sea")
+let busqueda= document.querySelector(`.resultadobus`)
+for(const producto of listaAccesorioB)
+{
+    let divisorbusqueda=document.createElement("div");
+    divisorbusqueda.innerHTML=
+                        `<h1>El producto no fue encontrado, vuelva a intentarlo.</h1>`
+                    
+    busqueda.appendChild(divisorbusqueda);              
+                        
+}
 
 }
 else
 {
-    console.log(buscador);
-    alert("Disponemos de ese producto en la tienda.");
+    let busqueda= document.querySelector(`.resultadobus`)
+    for(const producto of listaAccesorioB)
+    {
+        let divisorbusqueda=document.createElement("div");
+        divisorbusqueda.innerHTML=
+                            `<h1>Disponemos stock de este producto.</h1>`
+                        
+        busqueda.appendChild(divisorbusqueda);             
+                            
+    }
+         
 }
 }
-/*<<< FIN FUNCION >>>*/
+/*FIN BUSCADOR*/
+
+
+/*ARRAY DE PRODUCTOS*/
+const listaAccesorio = [accesorioA, accesorioB, accesorioC]
+
+let  listaAccesorioB = []
+
+//Faltaba iterar la data del json y cargarla al array de productos
+fetch('data.json')
+    .then((resp)=>resp.json())
+    .then((data)=> //hasta aqui estaba todo bien
+                {
+                data.forEach(producto =>{ //faltaba este for each
+                    listaAccesorioB.push(
+                        new Accesorio( //creas un objeto nuevo en cada iteracion y pusheas a tu array
+                            producto.id,
+                            producto.tipo,
+                            producto.stock,
+                            producto.precio
+                        )
+                    )
+                })
+            }
+        );
+console.log(listaAccesorioB); //muestro x consola. Antes estaba vacio
+
+//Con este array cargado correctamente, ya puedo crear las cards
+//No hay ninguna funcion para printear. Esta tenes que construirla como ya venias haciendo antes del fecth + json
+
+
+/* CARRITO PARA LISTA*/
+function agregaralcarro(id)
+{
+    for(let i = 0; i < listaAccesorio.length; i++)
+{
+    if(id==listaAccesorio[i].id)
+    {
+        carrito.push(listaAccesorio[i])
+        console.log(carrito);
+        
+    }
+}
+}
 
 
 
-
-
-const listaAccesorio= [accesorioA, accesorioB, accesorioC]
-
-
-
-/*<<<FUNCION PARA COMPRAR>>>*/
-//recibe el id del producto. Busco matchear id enviado con el del for. Asi accedo correctamente a un objeto dentro de un array
 function Compra(id)
 {
     for(let i = 0; i < listaAccesorio.length; i++)
     {
         if(id == listaAccesorio[i].id)
         {
-            console.log(listaAccesorio[i].id) //muestro que es el mismo
-            cantidad=prompt(`Cuantos ${listaAccesorio[i].tipo} desea comprar?`); //borrar prompts en lo posible
+            console.log(listaAccesorio[i].id) 
+            cantidad=prompt(`Cuantos ${listaAccesorio[i].tipo} desea comprar?`);
             cantidad=parseInt(cantidad);
             listaAccesorio[i].hayStock(cantidad,preciofinal);
-            carrito.push(compracollar+1+listaAccesorio[i].tipo); //+ 1? No entiendo que hace
+        
 
         }
     }
+}
 
 
-    /* comento evitando prompts
+/*<<<FUNCION PARA COMPRAR>>>*/
+
+function numeroproducto()
+{
+    let producto=document.getElementById("inputproductos").value;
+    console.log(producto)
+    producto=parseInt(producto)
+   
+    while(respuesta=="si")
+    {
+switch(producto)
+{
+    
+    case 1:
+        console.log(listaAccesorio[0].info());
+        cantidad=prompt("Cuantos Collares desea comprar?");
+        cantidad=parseInt(cantidad);
+        listaAccesorio[0].hayStock(cantidad,preciofinal);
+        
+        Toastify({
+            text: "Producto Agregado!",
+            duration: 4000
+        }).showToast();
+    
+        
+    
+
+        break;
+        case 2:
+            console.log(listaAccesorio[1].info());
+            cantidad=prompt("Cuantos Dijes desea comprar?");
+            cantidad=parseInt(cantidad);
+            listaAccesorio[1].hayStock(cantidad,preciofinal);
+            
+            Toastify({
+                text: "Producto Agregado!",
+                duration: 4000
+            }).showToast();
+        
+
+            break;
+        case 3:
+            
+            console.log(listaAccesorio[2].info());
+            cantidad=prompt("Cuantos Anillos desea comprar?");
+            cantidad=parseInt(cantidad);
+            Toastify({
+                text: "Producto Agregado!",
+                duration: 4000
+            }).showToast();
+        
+            break;
+
+            default:
+                
+            Toastify({
+                    text: "Error, vuelva a ingresar la opcion de la lista",
+                    duration: 4000,
+                    position:"left" 
+
+                }).showToast();
+
+
+            
+}
+   
+    respuesta=prompt("desea seguir comprando productos?");
+
+
     let prueba = document.getElementById("prueba")
     prueba.innerText="Usted compro.."+ acumuladorunidades +" "+ "unidades"+" "+"con un total de $"+" "+acumuladorproductos;
 
@@ -75,12 +194,14 @@ function Compra(id)
     carro.innerText="Su carrito posee "+" "+ carrito + " con un total de "+ acumuladorproductos;
     
     
-    respuesta=prompt("desea seguir comprando productos?");
-    */
+    
+    
+}
+
+        
 
   
 }
-
 
 /*<<<FIN FUNCION>>>*/
 
@@ -93,29 +214,21 @@ function mostrar_inputs()
 
 function menulista()
 {
-    const lista=listaAccesorio.map(Accesorio=>Accesorio.tipo)
-    alert("Esta es la lista de accesorios disponibles." + lista);
-
-    while(respuesta=="si")
-{
-productos=prompt("Eliga el prodructo que desea, 1-Collares,2-Dijes,3-Anillos");
-productos=parseInt(productos);
-
-Compra()
-
-}
+    let listado=document.getElementById("listado")
+    listado.innerText="1--Collar 2--Dije 3--Anillo";
+    Swal.fire({
+        title: 'Lista de Accesiorios',
+        text: "1--Collar 2--Dije 3--Anillo",
+        icon: 'info',
+        confirmButtonText: 'Escriba el numero del que desee'
+    })
+    
+    
 }
 /*<<<FIN FUNCIONES INPUTS>>>*/
 
- 
-
-
-/*-------FIN SECCION FUNCIONES------*/
-
- 
-//Aqui seteo al id del boton como el mismo que el del producto. Le agrego el onclick que envia como parametro es emismo id
-let catalogo= document.querySelector(`.catalogo`)
-for(const producto of listaAccesorio)
+let catalogo = document.querySelector(`.catalogo`)
+for(const producto of listaAccesorioB)
 {
     let contenedor=document.createElement("div");
     contenedor.innerHTML=
@@ -123,25 +236,28 @@ for(const producto of listaAccesorio)
                         <h2>Tipo:${producto.tipo}</h2>
                         <p>Stock:${producto.stock}</p>
                         <b>Precio:${producto.precio}</b>
-                        <button id="${producto.id}" onclick="eventoBtnCompra(${producto.id})">Comprar</button></div>`
-                    
+                        <button id="${producto.id}" onclick="eventoBtnCompra(${producto.id})">Comprar</button></div>`                    
      catalogo.appendChild(contenedor);
+     console.log(listaAccesorioB);
 
-                    
-                  
-                        
+                                    
 }
 
-//Se activa solo si clickeas. Antes, al estar en el espacio global, era activado sin que nadie clickee y retornaba undefined
+
+
+
 function eventoBtnCompra(id)
 {
-    console.log(id) //el id del boton es el mismo que el del producto, asi fue seteado
-    Compra(id);
+    console.log(id)
+    Compra(id)
+    agregaralcarro(id)
+    Toastify({
+        text: "Producto Agregado!",
+        duration: 4000
+    }).showToast();
+
+
 }
-
-
-
-
 
 const mensajes = [
     {mensaje:"Bienvenido/a a JoyeriaPepe"},
@@ -149,7 +265,6 @@ const mensajes = [
 ]
 
 let bienvenida = document.querySelector(`.bienvenida`)
-
 for(const mensaje of mensajes)
 {
     let contenedor=document.createElement("div");
@@ -160,29 +275,5 @@ for(const mensaje of mensajes)
 
 }
 
-
-
-
-/* Innecesario con la nueva correccion
-let comprarboton = document.getElementById("botoncomprar")
-comprarboton.onclick=()=>{console.log(listaAccesorio[2].info());
-    cantidad=prompt("Cuantos collares desea comprar?");
-    cantidad=parseInt(cantidad);
-    listaAccesorio[0].hayStock(cantidad,preciofinal);}
-
-*/
-                       
-
-/*-----Guardado de carrito---*/
-
-    const guardardadoLocal = (productoslistado, valor)=>{localStorage.setItem(productoslistado, valor)};
-    /*Guardado producto por producto*/
-    for(const productos of carrito)
-    {
-        guardardadoLocal(carrito.push,JSON.stringify(carrito));
-    }
-    guardardadoLocal("listaCompleta",JSON.stringify(carrito));
-
-    console.log(carrito);
-    
-
+/*GUARDADO PRODUCTOS*/
+localStorage.setItem("ListadoDeProductos",JSON.stringify(listaAccesorio));

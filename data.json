@@ -1,0 +1,22 @@
+[
+
+    {
+        "id":1,
+        "tipo":"Collar",
+        "stock": 100,
+        "precio":350
+    },
+    {
+        "id":2,
+        "tipo":"Dije",
+        "stock":50,
+        "precio":600
+    },
+    {
+        "id":3,
+        "tipo":"Anillo",
+        "stock":25 ,
+        "precio":550
+    }
+
+]
