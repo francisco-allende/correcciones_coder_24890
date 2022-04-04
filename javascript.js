@@ -18,6 +18,8 @@ let acumuladorunidades=0;
 let productoelegido=document.getElementById("productoElegido");
 
 
+
+
 /*<<<FUNCION PARA BUSCAR PRODUCTO>>>*/
 function nombreProducto()   
 {
@@ -60,16 +62,15 @@ else
 /*ARRAY DE PRODUCTOS*/
 const listaAccesorio = [accesorioA, accesorioB, accesorioC]
 
-let  listaAccesorioB = []
+let listaAccesorioB = []
 
-//Faltaba iterar la data del json y cargarla al array de productos
 fetch('data.json')
     .then((resp)=>resp.json())
-    .then((data)=> //hasta aqui estaba todo bien
+    .then((data)=> 
                 {
-                data.forEach(producto =>{ //faltaba este for each
+                data.forEach(producto =>{
                     listaAccesorioB.push(
-                        new Accesorio( //creas un objeto nuevo en cada iteracion y pusheas a tu array
+                        new Accesorio( 
                             producto.id,
                             producto.tipo,
                             producto.stock,
@@ -78,11 +79,46 @@ fetch('data.json')
                     )
                 })
             }
-        );
-console.log(listaAccesorioB); //muestro x consola. Antes estaba vacio
+        )
 
-//Con este array cargado correctamente, ya puedo crear las cards
-//No hay ninguna funcion para printear. Esta tenes que construirla como ya venias haciendo antes del fecth + json
+console.log(listaAccesorioB); 
+
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('cargado');
+        displayCards();
+      }, 2000);
+    });
+  }
+  
+  async function asyncCall() {
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+    // expected output: "resolved"
+  }
+  
+  asyncCall();
+
+function displayCards()
+{
+    let catalogo = document.querySelector(`.catalogo`)
+    for(let producto of listaAccesorioB)
+    {
+        let contenedor=document.createElement("div");
+        contenedor.innerHTML=
+                            `<div class="card">
+                            <h2>Tipo:${producto.tipo}</h2>
+                            <p>Stock:${producto.stock}</p>
+                            <b>Precio:${producto.precio}</b>
+                            <button id="${producto.id}" onclick="eventoBtnCompra(${producto.id})">Comprar</button></div>`                    
+         catalogo.appendChild(contenedor);
+         console.log(listaAccesorioB);
+    
+                                        
+    }
+}
 
 
 /* CARRITO PARA LISTA*/
@@ -227,21 +263,7 @@ function menulista()
 }
 /*<<<FIN FUNCIONES INPUTS>>>*/
 
-let catalogo = document.querySelector(`.catalogo`)
-for(const producto of listaAccesorioB)
-{
-    let contenedor=document.createElement("div");
-    contenedor.innerHTML=
-                        `<div class="card">
-                        <h2>Tipo:${producto.tipo}</h2>
-                        <p>Stock:${producto.stock}</p>
-                        <b>Precio:${producto.precio}</b>
-                        <button id="${producto.id}" onclick="eventoBtnCompra(${producto.id})">Comprar</button></div>`                    
-     catalogo.appendChild(contenedor);
-     console.log(listaAccesorioB);
 
-                                    
-}
 
 
 
